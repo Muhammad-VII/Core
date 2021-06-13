@@ -3,12 +3,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jwtDecode from 'jwt-decode';
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   constructor(private _HttpClinet:HttpClient,private _Router:Router) {
     if(localStorage.getItem(`userSession`) != null){
       this.saveCurrentUser();
@@ -16,11 +14,12 @@ export class AuthService {
   }
 
   currentUser = new BehaviorSubject(null);
+  userName:any;
 
   saveCurrentUser(){
     let token:any = localStorage.getItem(`userSession`)
-    this.currentUser.next(jwtDecode(token)) 
-    console.log(this.currentUser)
+    this.currentUser.next(jwtDecode(token))
+    this.userName = this.currentUser.value
   }
 
   register(finalRegForm:object):Observable<any>

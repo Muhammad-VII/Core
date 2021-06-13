@@ -15,6 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SeemorePipe } from './seemore.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MoviesHeaderComponent } from './movies-header/movies-header.component';
 
 
 
@@ -30,7 +32,8 @@ import { SeemorePipe } from './seemore.pipe';
     RegisterComponent,
     LoginComponent,
     NavbarComponent,
-    SeemorePipe
+    SeemorePipe,
+    MoviesHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { SeemorePipe } from './seemore.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
