@@ -1,16 +1,19 @@
 <div class="w-75 m-auto" @fade>
 
-<!--Start Movies-->
+  <!--Start Movies-->
   <div class="row py-5">
-    <div class="col-md-4 d-flex justify-content-center align-items-center Title">
+    <div class="col-md-4 d-flex align-items-center">
       <div>
-        <h2>Trending movies <br> to watch right now</h2>
-        <p class="text-muted">Most watched movies by week</p>
+        <div class="brdr w-25 mb-4"></div>
+        <div>
+          <h2 class="h1">Trending movies <br> to watch right now</h2>
+          <p class="second-color my-2">Most watched movies by week</p>
+        </div>
+        <div class="brdr w-75 mt-4"></div>
       </div>
-
     </div>
 
-    <div *ngFor = 'let movie of moviesList' class="col-md-2">
+    <div *ngFor='let movie of moviesList' class="col-md-2">
       <div>
         <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
         <h5 class="position-absolute vote">{{movie.vote_average}}</h5>
@@ -19,42 +22,46 @@
       <p class="text-muted">{{movie.overview|seemore:15}}</p>
     </div>
   </div>
-<!--End Movies-->
+  <!--End Movies-->
 
-<!--Start Tv-->
+  <!--Start Tv-->
   <div class="row py-5">
-
-    <div class="col-md-4 d-flex justify-content-center align-items-center Title">
+    <div class="col-md-4 d-flex align-items-center">
       <div>
-        <h2>Trending Tv shows <br> to watch right now</h2>
-        <p class="text-muted">Most watched tv shows by week</p>
+        <div class="brdr w-25 mb-4"></div>
+        <div>
+          <h2 class="h1">Trending Tv shows <br> to watch right now</h2>
+          <p class="second-color my-2">Most watched Tv shows by week</p>
+        </div>
+        <div class="brdr w-75 mt-4"></div>
       </div>
-
     </div>
 
-    <div *ngFor = 'let tv of tvList' class="col-md-2">
+    <div *ngFor='let tv of tvList' class="col-md-2">
       <img [src]="imgUrl+tv.poster_path" [alt]="tv.title" class="w-100 poster">
       <h3 class="my-2 h6 font-weight-bolder">{{tv.name}}</h3>
       <p class="text-muted">{{tv.overview|seemore:15}}</p>
     </div>
   </div>
-<!--End Tv-->
+  <!--End Tv-->
 
-<!--Start People-->
-<div class="row py-5">
-  <div class="col-md-4 d-flex justify-content-center align-items-center TitlePer">
-    <div>
-      <h2>Trending Artists <br> to watch right now</h2>
-      <p class="text-muted">Most watched artists by week</p>
+  <!--Start People-->
+  <div class="row py-5">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2 class="h1">Trending Artists <br> to watch right now</h2>
+        <p class="text-muted">Most watched artists by week</p>
+        <div class="brdr w-100 mb-4"></div>
+      </div>
+    </div>
+
+    <div *ngFor='let artist of artists' class="col-md-2">
+      <img [src]="imgUrl+artist.profile_path" [alt]="artist.name" class="w-100 poster">
+      <h6 class="my-2 font-weight-bolder">{{artist.name}}</h6>
     </div>
   </div>
-
-  <div *ngFor = 'let artist of artists' class="col-md-2">
-    <img [src]="imgUrl+artist.profile_path" [alt]="artist.name" class="w-100 poster">
-    <h6 class="my-2 font-weight-bolder">{{artist.name}}</h6>
-  </div>
-</div>
-<!--End People-->
+  <!--End People-->
 </div>
 
 

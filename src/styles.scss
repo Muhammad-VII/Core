@@ -1,4 +1,4 @@
-// Start global rules
+/* Start global rules */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ $borderColor: #a8a8a83d;
 $borderHeight: 1px;
 $secondFontColor: #949cb0;
 
-// End global rules
+/* End global rules */
 
 /* Start global styling */
 body {
@@ -162,6 +162,15 @@ main {
 
 .Title p{
   font-size: 25px;
+}
+
+.brdr{
+  height: $borderHeight;
+  background-color: $borderColor;
+}
+
+.second-color{
+  color: $secondFontColor;
 }
 
 .Title::before {
