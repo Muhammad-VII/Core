@@ -1,0 +1,226 @@
+// Start global rules
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+$bgColor: #131722;
+$lightBgColor: #24baef;
+$bgTransparent: rgba(36, 186, 239, 0.6);
+$jumbotronBg: #131a2c;
+$fontColor: #fff;
+$borderColor: #a8a8a83d;
+$borderHeight: 1px;
+$secondFontColor: #949cb0;
+
+// End global rules
+
+/* Start global styling */
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: $bgColor;
+  box-sizing: border-box;
+  color: $fontColor;
+}
+
+nav {
+  box-shadow: rgb(50, 50, 93) 0px 14px 17px -5px,
+    rgba(0, 0, 0, 0.486) 0px 8px 11px -8px;
+}
+
+.logo {
+  width: 55px;
+  background-color: $fontColor;
+}
+
+nav .nav-link {
+  font-size: 19px;
+  font-weight: bolder;
+  color: $fontColor !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+}
+
+.active-link {
+  font-weight: bolder;
+}
+
+nav .nav-link:hover {
+  color: rgb(0, 210, 230) !important;
+}
+
+.navbar-brand {
+  font-weight: 900;
+  color: $fontColor !important;
+}
+
+.navbar-brand:hover {
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin-top: 18px;
+  background-color: $jumbotronBg;
+  box-shadow: rgb(50, 50, 93) 0px 14px 19px -5px;
+}
+/* End global styling */
+
+/* Start intro animation */
+main {
+  font-family: "heebo", sans-serif;
+}
+
+.landing {
+  min-height: 100vh;
+  background-size: cover;
+}
+
+#logo {
+  font-family: "lobster", cursive;
+  font-weight: lighter;
+  font-size: 2rem;
+}
+
+.big-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  font-family: "lobster", cursive;
+  font-size: 5rem;
+  transform: translate(-50%, -30%);
+  color: rgb(61, 61, 61);
+  -webkit-transform: translate(-50%, -30%);
+  -moz-transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  -o-transform: translate(-50%, -30%);
+}
+
+.intro {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+.text {
+  font-size: 5rem;
+}
+.slider {
+  background-color: rgb(24, 25, 26);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+}
+
+.intro-text {
+  color: rgb(233, 233, 233);
+  font-family: "heebo", sans-serif;
+  font-size: 3rem;
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+}
+/* End intro animation */
+
+.Title{
+  position: relative;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+}
+
+.Title h2{
+  font-size: 40px;
+}
+
+.Title p{
+  font-size: 25px;
+}
+
+.Title::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  width: 25%;
+  border: $borderHeight solid;
+  border-color: $borderColor;
+}
+
+.Title::after {
+  content: "";
+  position: absolute;
+  bottom: 32%;
+  left: 0%;
+  width: 25%;
+  border: $borderHeight solid;
+  border-color: $borderColor;
+}
+
+.TitlePer{
+  position: relative;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+}
+
+.TitlePer::before{
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  width: 25%;
+  border: $borderHeight solid;
+  border-color: $borderColor;
+}
+
+.TitlePer::after{
+  content: "";
+  position: absolute;
+  bottom: 28%;
+  left: 0%;
+  width: 25%;
+  border: $borderHeight solid;
+  border-color: $borderColor;
+}
+
+.poster{
+  background: #1D1F20;
+  position: relative;
+}
+
+.vote{
+  background-color: $lightBgColor;
+  width: 35px;
+  text-align: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  top: 0%;
+  right: 9%;
+}

@@ -1,0 +1,69 @@
+<div class="w-75 m-auto" @fade>
+
+<!--Start Movies-->
+  <div class="row py-5">
+    <div class="col-md-4 d-flex justify-content-center align-items-center Title">
+      <div>
+        <h2>Trending movies <br> to watch right now</h2>
+        <p class="text-muted">Most watched movies by week</p>
+      </div>
+
+    </div>
+
+    <div *ngFor = 'let movie of moviesList' class="col-md-2">
+      <div>
+        <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
+        <h5 class="position-absolute vote">{{movie.vote_average}}</h5>
+      </div>
+      <h3 class="my-2 h6 font-weight-bolder">{{movie.title}}</h3>
+      <p class="text-muted">{{movie.overview|seemore:15}}</p>
+    </div>
+  </div>
+<!--End Movies-->
+
+<!--Start Tv-->
+  <div class="row py-5">
+
+    <div class="col-md-4 d-flex justify-content-center align-items-center Title">
+      <div>
+        <h2>Trending Tv shows <br> to watch right now</h2>
+        <p class="text-muted">Most watched tv shows by week</p>
+      </div>
+
+    </div>
+
+    <div *ngFor = 'let tv of tvList' class="col-md-2">
+      <img [src]="imgUrl+tv.poster_path" [alt]="tv.title" class="w-100 poster">
+      <h3 class="my-2 h6 font-weight-bolder">{{tv.name}}</h3>
+      <p class="text-muted">{{tv.overview|seemore:15}}</p>
+    </div>
+  </div>
+<!--End Tv-->
+
+<!--Start People-->
+<div class="row py-5">
+  <div class="col-md-4 d-flex justify-content-center align-items-center TitlePer">
+    <div>
+      <h2>Trending Artists <br> to watch right now</h2>
+      <p class="text-muted">Most watched artists by week</p>
+    </div>
+  </div>
+
+  <div *ngFor = 'let artist of artists' class="col-md-2">
+    <img [src]="imgUrl+artist.profile_path" [alt]="artist.name" class="w-100 poster">
+    <h6 class="my-2 font-weight-bolder">{{artist.name}}</h6>
+  </div>
+</div>
+<!--End People-->
+</div>
+
+
+<div class="intro">
+  <div class="intro-text">
+    <h1 class="hide">
+      <span class="text">Movies</span>
+    </h1>
+
+  </div>
+</div>
+<div class="slider"></div>

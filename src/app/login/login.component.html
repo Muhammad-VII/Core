@@ -1,0 +1,27 @@
+<div class="jumbotron" @fade>
+
+  <div *ngIf='error' class='alert alert-danger'>
+    <h2>{{error}}</h2>
+  </div>
+
+  <div *ngIf='success' class='alert alert-success'>
+    <h2>{{success}}</h2>
+  </div>
+
+  <form [formGroup]='loginForm' class="w-50 m-auto" (ngSubmit) = 'submitLoginForm(loginForm)'>
+      <h1 class="my-3">Registration form</h1>
+
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input formControlName='email' type="text" placeholder="Enter your Email.." id="Email" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input formControlName='password' type="password" placeholder="Enter your password.." id="password" class="form-control">
+    </div>
+
+
+      <button [disabled] = 'loginForm.invalid' class="btn btn-outline-info font-weight-bold" type="submit">Login</button>
+  </form>
+</div>
