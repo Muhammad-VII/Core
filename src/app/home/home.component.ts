@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   showUserName(){
     this.userName = this._AuthService.userName.first_name
   }
-  
+
   ngOnInit(): void {
     let fade = () => {
       const tl = gsap.timeline({ default: { ease: 'power1.out' } });

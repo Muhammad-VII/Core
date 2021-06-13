@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
   { path: ``, redirectTo: `home`, pathMatch:`full` },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: `people`, canActivate:[AuthGuard], component: PeopleComponent },
   { path: `about`, canActivate:[AuthGuard], component: AboutComponent },
   { path: `network`, canActivate:[AuthGuard], component: NetworkComponent },
+  { path: `moviedetails/:id`, canActivate:[AuthGuard], component: MovieDetailsComponent },
   { path: `register`, component: RegisterComponent },
   { path: `login`, component: LoginComponent }
 ];

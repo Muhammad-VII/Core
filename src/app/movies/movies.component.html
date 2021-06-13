@@ -9,8 +9,7 @@
 <div class="slider"></div> -->
 
 
-
-<app-movies-header [parentData] = 'moviesList'></app-movies-header>
+<app-movies-header [parentData]='moviesList'></app-movies-header>
 
 <div class="w-75 m-auto" @fade>
 
@@ -28,10 +27,12 @@
     </div>
 
     <div *ngFor='let movie of moviesList' class="col-md-2">
-      <div class="position-relative">
+      <a [routerLink]='["/moviedetails", movie.id]'>
         <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
-        <div class="vote">{{movie.vote_average}}</div>
-      </div>
+        <div class="vote">
+          {{movie.vote_average}}
+        </div>
+      </a>
       <h3 class="my-2 h6 font-weight-bolder">{{movie.title}}</h3>
       <p class="text-muted">{{movie.overview|seemore:15}}</p>
     </div>
@@ -77,4 +78,3 @@
   </div>
   <!--End People-->
 </div>
-

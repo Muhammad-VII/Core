@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SeemorePipe } from './seemore.pipe';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MoviesHeaderComponent } from './movies-header/movies-header.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 
@@ -33,7 +34,8 @@ import { MoviesHeaderComponent } from './movies-header/movies-header.component';
     LoginComponent,
     NavbarComponent,
     SeemorePipe,
-    MoviesHeaderComponent
+    MoviesHeaderComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
