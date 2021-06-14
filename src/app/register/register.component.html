@@ -1,12 +1,13 @@
 <div class="jumbotron" @fade>
 
-    <div *ngIf="error" class="alert alert-danger">
-        <h2>{{error}}</h2>
+    <div *ngIf="error || success" [class.alert-success]='success' [class.alert-danger]='error' class="alert alert-danger">
+        <h2 *ngIf='error'>{{error}}</h2>
+        <h2 *ngIf='success'>{{success}}</h2>
     </div>
 
-    <div *ngIf="success" class="alert alert-success">
+    <!-- <div *ngIf="success" class="alert alert-success">
         <h2>{{success}}</h2>
-    </div>
+    </div> -->
 
     <form [formGroup]='registerForm' class="w-50 m-auto" (ngSubmit)='submitForm(registerForm)'>
         <h1 class="my-3">Registration form</h1>
@@ -53,8 +54,8 @@
 
         <div class="form-group">
             <label for="password">Password:</label>
-            <input formControlName='password' type="password" autocomplete="current-password" placeholder="Password" id="password"
-                class="form-control">
+            <input formControlName='password' type="password" autocomplete="current-password" placeholder="Password"
+                id="password" class="form-control">
             <!--Errors alert-->
             <div *ngIf="registerForm.get('password')?.errors != null && registerForm.get('password')?.touched"
                 class="alert my-2 alert-danger">

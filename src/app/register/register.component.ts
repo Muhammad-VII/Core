@@ -37,12 +37,14 @@ export class RegisterComponent implements OnInit {
   submitForm(formValues: FormGroup) {
     this._AuthService.register(formValues.value).subscribe((response) => {
       if(response.message == `success`){
+        this.error = ''
         this.success = response.message
         setTimeout(() => {
           this._Router.navigate([`/login`])
         },1000)
       }
       else{
+        this.success = ''
         this.error = response.errors.email.message
       }
     })

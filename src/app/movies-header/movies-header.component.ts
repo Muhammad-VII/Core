@@ -21,7 +21,7 @@ export class MoviesHeaderComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
@@ -41,7 +41,7 @@ export class MoviesHeaderComponent implements OnInit {
       }
     },
     nav: true,
-    margin:8,
+    margin:5,
     animateOut: true
   }
 

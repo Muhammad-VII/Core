@@ -31,11 +31,15 @@ export class LoginComponent implements OnInit {
       {
         localStorage.setItem(`userSession`, response.token)
         this._AuthService.saveCurrentUser();
-        this._Router.navigate(['/home'])
+        this.error = ``
         this.success = response.message;
+        setTimeout(() =>{
+          this._Router.navigate(['/home'])
+        },1000)
       }
       else
       {
+        this.success = ``
         this.error = response.message
       }
   })
