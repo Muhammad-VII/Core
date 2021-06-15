@@ -27,7 +27,7 @@
     </div>
 
     <div *ngFor='let movie of moviesList' class="col-md-2">
-      <a [routerLink]='["/moviedetails", movie.id]'>
+      <a [routerLink]='["/moviedetails", movie.id]' class="poster-hover">
         <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
         <div class="vote">
           {{movie.vote_average}}
