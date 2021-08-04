@@ -22,9 +22,12 @@ export class MoviesHeaderComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: false,
+    pullDrag: true,
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 100,
     navText: ['', ''],
     responsive: {
       0: {
@@ -44,5 +47,4 @@ export class MoviesHeaderComponent implements OnInit {
     margin:5,
     animateOut: true
   }
-
 }
