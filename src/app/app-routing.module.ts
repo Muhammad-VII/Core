@@ -11,6 +11,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 const routes: Routes = [
   { path: ``, redirectTo: `home`, pathMatch:`full` },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: `about`, canActivate:[AuthGuard], component: AboutComponent },
   { path: `network`, canActivate:[AuthGuard], component: NetworkComponent },
   { path: `moviedetails/:id`, canActivate:[AuthGuard], component: MovieDetailsComponent },
+  { path:'tvdetalis/:id' ,canActivate:[AuthGuard], component:TvDetailsComponent},
   { path: `register`, component: RegisterComponent },
   { path: `login`, component: LoginComponent }
 ];

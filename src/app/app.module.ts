@@ -18,6 +18,7 @@ import { SeemorePipe } from './seemore.pipe';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MoviesHeaderComponent } from './movies-header/movies-header.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { TvDetailsComponent } from './tv-details/tv-details.component';
 
 
 
@@ -35,7 +36,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     NavbarComponent,
     SeemorePipe,
     MoviesHeaderComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    TvDetailsComponent
   ],
   imports: [
     BrowserModule,

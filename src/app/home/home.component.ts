@@ -13,10 +13,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private _AuthService:AuthService) { }
 
-  userName:string = ""
+  firstName:string = ""
+  lastName:string = ""
 
   showUserName(){
-    this.userName = this._AuthService.userName.first_name
+    this.firstName = this._AuthService.userName.first_name
+    this.lastName = this._AuthService.userName.last_name
   }
 
   ngOnInit(): void {

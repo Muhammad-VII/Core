@@ -1,0 +1,35 @@
+<section>
+  <div id="detalis">
+    <div class="background-dark">
+    </div>
+    <div>
+      <div class="main">
+        <div class="container tv-detalis py-5 m-auto">
+          <div class="row m-5">
+            <div class="col-md-4 position-relative">
+              <img class="w-100 " [src]="imgPrefix+tvDetalis?.poster_path" alt="movie.title">
+              <div class="vote">
+                {{tvDetalis?.vote_average}} <i class="fab fa-imdb"></i>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="title py-5">
+                <h2 class="m-2 text-left font-weight-bolder">{{tvDetalis?.name|uppercase}}</h2>
+                <p class="mt-5">{{tvDetalis?.overview}}</p>
+                <div class="btns">
+                  <button type="button" (click)='watchNow(tvDetalis?.name)'
+                    class="btn btn-outline-light mr-3 p-3 w-25 font-weight-bolder">Play
+                    <i class=" fas fa-play ml-2"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-light p-3 w-25 font-weight-bolder">Download
+                    <i class="fas fa-download w-25"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

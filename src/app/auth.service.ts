@@ -7,6 +7,9 @@ import jwtDecode from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthService {
+  getMoviePigaion(pageNumber: number) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private _HttpClinet:HttpClient,private _Router:Router) {
     if(localStorage.getItem(`userSession`) != null){
       this.saveCurrentUser();

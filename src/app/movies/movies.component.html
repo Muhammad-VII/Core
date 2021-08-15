@@ -1,4 +1,4 @@
-<app-movies-header [parentData]='moviesList'></app-movies-header>
+<app-movies-header [parentData]='trendingMovies'></app-movies-header>
 
 <div class="w-75 m-auto" @fade>
 
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div *ngFor='let movie of moviesList' class="col-md-2">
+    <div *ngFor='let movie of trendingMovies' class="col-md-2">
       <a [routerLink]='["/moviedetails", movie.id]' class="poster-hover">
         <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
         <div class="vote">
@@ -26,10 +26,20 @@
       <p class="text-muted">{{movie.overview|seemore:15}}</p>
     </div>
   </div>
+
+  <div class="pagination-movie m-auto text-center d-flex justify-content-center  p-3 h-auto ">
+    <nav class="pagination-nav d-flex justify-content-center " aria-label="...">
+      <ul class="pagination pagination-lg">
+      
+        <li *ngFor='let i of pages' class="page-item" (click)='changePageMovies(i)' ><a class="page-link">{{i}}</a></li>
+       
+      </ul>
+    </nav>
+  </div>
   <!--End Movies-->
 
   <!--Start Tv-->
-  <div class="row py-5" id="tv">
+  <!-- <div class="row py-5" id="tv">
     <div class="col-md-4 d-flex align-items-center">
       <div>
         <div class="brdr w-25 mb-4"></div>
@@ -41,12 +51,22 @@
       </div>
     </div>
 
-    <div *ngFor='let tv of tvList' class="col-md-2">
+    <div *ngFor='let tv of trendingTv' class="col-md-2">
       <img [src]="imgUrl+tv.poster_path" [alt]="tv.title" class="w-100 poster">
       <h3 class="my-2 h6 font-weight-bolder">{{tv.name}}</h3>
       <p class="text-muted">{{tv.overview|seemore:15}}</p>
     </div>
   </div>
+
+  <div class="pagination-movie m-auto text-center d-flex justify-content-center  p-3 h-auto ">
+    <nav class="pagination-nav d-flex justify-content-center " aria-label="...">
+      <ul class="pagination pagination-lg">
+  
+        <li *ngFor='let i of pages' class="page-item" (click)='changePageTv(i)' ><a class="page-link">{{i}}</a></li>
+       
+      </ul>
+    </nav>
+  </div> -->
   <!--End Tv-->
 
   <!--Start People-->

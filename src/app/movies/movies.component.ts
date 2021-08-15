@@ -9,24 +9,30 @@ import gsap from 'gsap';
   animations: [fade],
 })
 export class MoviesComponent implements OnInit {
-  moviesList: any[] = [];
-  tvList: any[] = [];
+  // moviesList: any[] = [];
   artists: any[] = [];
-
+  pages: number[] = [1, 2, 3, 4, 5, 6];
+  pageNumber: number[] = [];
+  trendingMovies: any[] = [];
+  // trendingTv: any[] = [];
   imgUrl: string = `http://image.tmdb.org/t/p/w500/`;
-  constructor(_MoviesService: MoviesService) {
-    _MoviesService.getMovies('movie').subscribe((data) => {
-      this.moviesList = data.results.slice(0,10);
-    });
 
-    _MoviesService.getMovies('tv').subscribe((data) => {
-      this.tvList = data.results.slice(0,10);
-    });
+  constructor(private _MoviesService: MoviesService) {
+    this.changePageMovies(1);
+    // this.changePageTv(1);
+  }
 
-    _MoviesService.getMovies('person').subscribe((data) => {
-      this.artists = data.results.slice(0,10);
+  changePageMovies(pageNumber: number) {
+    this._MoviesService.getMoviePigaion(pageNumber).subscribe((data) => {
+      this.trendingMovies = data.results;
     });
   }
+
+  // changePageTv(pageNumber: number) {
+  //   this._MoviesService.getMoviePigaion(pageNumber).subscribe((data) => {
+  //     this.trendingTv = data.results;
+  //   });
+  // }
 
   ngOnInit(): void {
     let fade = () => {
@@ -34,7 +40,7 @@ export class MoviesComponent implements OnInit {
       tl.to('.text', { y: '0%', duration: 1, stagger: 0.25 });
       tl.to('.slider', { y: '-100%', duration: 1.5, delay: 0.5 });
       tl.to('.intro', { y: '-100%', duration: 1 }, '-=1');
-    }
-    fade()
+    };
+    fade();
   }
 }
