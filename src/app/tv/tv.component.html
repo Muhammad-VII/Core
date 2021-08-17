@@ -1,35 +1,38 @@
-<app-tv-header [parentData]='trendingTv' @fade></app-tv-header>
+<main @fade>
+  <app-tv-header [parentData]='trendingTv'></app-tv-header>
 
-<section id="tv w-75 m-auto" @fade>
-  <div class="row py-5 w-75 m-auto" id="tv">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
-      <div>
-        <div class="brdr w-25 mb-4"></div>
+  <section id="tv w-75 m-auto">
+    <div class="row py-5 w-75 m-auto" id="tv">
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
         <div>
-          <h2 class="h1">Trending Tv shows <br> to watch right now</h2>
-          <p class="second-color my-2">Most watched Tv shows by week</p>
+          <div class="brdr w-25 mb-4"></div>
+          <div>
+            <h2 class="h1">Trending Tv shows <br> to watch right now</h2>
+            <p class="second-color my-2">Most watched Tv shows by week</p>
+          </div>
+          <div class="brdr w-75 mt-4"></div>
         </div>
-        <div class="brdr w-75 mt-4"></div>
+      </div>
+  
+      <div *ngFor='let tv of trendingTv' class="col-md-2">
+        <a [routerLink]='["/tvdetalis", tv.id]' class="poster-hover">
+          <img [src]="imgUrl+tv.poster_path" [alt]="tv.title" class="w-100 poster position-relative">
+          <div class="vote">
+            {{tv.vote_average}}
+          </div>
+        </a>
+        <h3 class="my-2 h6 font-weight-bolder">{{tv.name}}</h3>
+        <p class="text-muted">{{tv.overview|seemore:15}}</p>
       </div>
     </div>
-
-    <div *ngFor='let tv of trendingTv' class="col-md-2">
-      <a [routerLink]='["/tvdetalis", tv.id]' class="poster-hover">
-        <img [src]="imgUrl+tv.poster_path" [alt]="tv.title" class="w-100 poster position-relative">
-        <div class="vote">
-          {{tv.vote_average}}
-        </div>
-      </a>
-      <h3 class="my-2 h6 font-weight-bolder">{{tv.name}}</h3>
-      <p class="text-muted">{{tv.overview|seemore:15}}</p>
+  
+    <div class="pagination-movie m-auto text-center d-flex justify-content-center p-3 h-auto ">
+      <nav class="pagination-nav d-flex justify-content-center " aria-label="...">
+        <ul class="pagination pagination-lg">
+          <li *ngFor='let i of pages' class="page-item" (click)='changePageTv(i)'><a class="page-link">{{i}}</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </section>
+</main>
 
-  <div class="pagination-movie m-auto text-center d-flex justify-content-center  p-3 h-auto ">
-    <nav class="pagination-nav d-flex justify-content-center " aria-label="...">
-      <ul class="pagination pagination-lg">
-        <li *ngFor='let i of pages' class="page-item" (click)='changePageTv(i)'><a class="page-link">{{i}}</a></li>
-      </ul>
-    </nav>
-  </div>
-</section>

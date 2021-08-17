@@ -1,4 +1,4 @@
-<section id="people">
+<section id="people" @fade>
   <div class="row py-5">
     <div class="col-md-4 d-flex align-items-center">
       <div>
@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <div *ngFor='let artist of artists' class="col-md-2 mb-3 position-relative">
+    <div *ngFor='let artist of artists' class="col-md-2 mb-3 position-relative" @fadeDelay>
       <a [routerLink]='["/artistDetails",artist.id]'>
         <img [src]="imgUrl+artist.profile_path" [alt]="artist.name" class="w-100 poster">
         <h6 class="my-2 artist-title font-weight-bolder mt-1">{{artist.name}}</h6>

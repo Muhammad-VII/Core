@@ -5,25 +5,39 @@
     <div>
       <div class="main">
         <div class="container tv-detalis py-5 m-auto">
-          <div class="row m-5">
-            <div class="col-md-4 position-relative">
-              <img class="w-100 " [src]="imgPrefix+tvDetalis?.poster_path" alt="movie.title">
-              <div class="vote">
-                {{tvDetalis?.vote_average}} <i class="fab fa-imdb"></i>
-              </div>
+          <div class="row mt-5">
+            <div class="col-md-4">
+              <img class="w-100" [src]="imgPrefix+tvDetalis?.poster_path" alt="movie.title">
+              <div class="vote">{{tvDetalis?.vote_average}} <i class="fab fa-imdb"></i></div>
             </div>
+
             <div class="col-md-8">
-              <div class="title py-5">
+              <div class="title">
                 <h2 class="m-2 text-left font-weight-bolder">{{tvDetalis?.name|uppercase}}</h2>
                 <p class="mt-5">{{tvDetalis?.overview}}</p>
                 <div class="btns">
-                  <button type="button" class="btn btn-outline-light mr-3 px-4 w-25 font-weight-bolder"
-                    (click)='watchTrailer()' id="watchTrailer">View Trailer
-                    <i class=" fas fa-play ml-2"></i>
+                  <button type="button" class="btn" (click)='watchTrailer()'>
+                    <div>
+                      <a class="neonBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Watch trailer
+                      </a>
+                    </div>
                   </button>
-                  <button type="button" class="btn btn-outline-light px-4 w-25 font-weight-bolder"
-                    (click)='watchNow(tvDetalis?.name)'>Watch movie
-                    <i class="fas fa-download w-25"></i>
+
+                  <button type="button" class="btn" (click)='watchNow(tvDetalis?.name)'>
+                    <div>
+                      <a class="neonBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Watch now!
+                      </a>
+                    </div>
                   </button>
                 </div>
               </div>
@@ -37,8 +51,8 @@
 
 <div class="text-center youtubeTrailer">
   <div class='layer'>
-      <i class="fas fa-times closeClick" (click)='exitIframe()'></i>
-    <iframe width="900" height="500" title="YouTube video player" frameborder="0"
+    <i class="fas fa-times closeClick" (click)='exitIframe()'></i>
+    <iframe width="900" height="500" *ngIf = 'closed' title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
   </div>

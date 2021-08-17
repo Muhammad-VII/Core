@@ -1,12 +1,12 @@
 import { MoviesService } from './../movies.service';
 import { Component, OnInit } from '@angular/core';
-import { fade } from 'src/animtaions';
+import { fade, fadeDelay } from 'src/animtaions';
 
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
-  animations: [fade],
+  animations: [fade, fadeDelay],
 })
 export class PeopleComponent implements OnInit {
 

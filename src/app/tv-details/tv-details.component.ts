@@ -7,12 +7,13 @@ declare const $: any;
   selector: 'app-tv-details',
   templateUrl: './tv-details.component.html',
   styleUrls: ['./tv-details.component.scss'],
-  animations: [fade]
+  animations: [fade],
 })
 export class TvDetailsComponent implements OnInit {
   id: string = '';
   tvDetalis: any = {};
   imgPrefix: string = `http://image.tmdb.org/t/p/w500/`;
+  closed: boolean = true;
 
   constructor(
     _ActivatedRoute: ActivatedRoute,
@@ -23,23 +24,25 @@ export class TvDetailsComponent implements OnInit {
       this.tvDetalis = response;
     });
   }
-  
+
   watchTrailer() {
-    $('.youtubeTrailer').fadeIn(300, () => {
+    $('.youtubeTrailer').fadeIn(200, () => {
+      this.closed = true;
       this._MovieService.getTvVideo(this.id).subscribe((res) => {
-        $('iframe').attr('src',`https://www.youtube.com/embed/${res.results[0].key}`)
-      })
-    })
+        $('iframe').attr('src',`https://www.youtube.com/embed/${res.results[0].key}`);
+      });
+    });
   }
 
   exitIframe() {
-    $('.youtubeTrailer').fadeOut(300)
-    document.querySelector('iframe')?.onpause;
+    $('.youtubeTrailer').fadeOut(200);
+    this.closed = false;
   }
 
   watchNow(term: String) {
     const link = `https://movs4u.vip/tvshows/${term.split(' ').join('-')}/`;
     window.open(link, '_blank');
   }
+
   ngOnInit(): void {}
 }

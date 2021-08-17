@@ -1,3 +1,15 @@
 .col-md-4 img {
     box-shadow: rgba(0, 0, 0, 0.15) 3.95px 3.95px 5.6px;
 }
+
+section{
+    height: 95vh;
+    background-image: url(../../assets/images/background.webp);
+    background-position: center center;
+    background-size: cover;
+}
+
+.layer {
+    background-color: rgba($color: #000000, $alpha: .8);
+    min-height: 100%;
+}
