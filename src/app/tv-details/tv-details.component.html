@@ -1,4 +1,4 @@
-<section>
+<section @fade>
   <div id="detalis">
     <div class="background-dark">
     </div>
@@ -17,11 +17,12 @@
                 <h2 class="m-2 text-left font-weight-bolder">{{tvDetalis?.name|uppercase}}</h2>
                 <p class="mt-5">{{tvDetalis?.overview}}</p>
                 <div class="btns">
-                  <button type="button" (click)='watchNow(tvDetalis?.name)'
-                    class="btn btn-outline-light mr-3 p-3 w-25 font-weight-bolder">Play
+                  <button type="button" class="btn btn-outline-light mr-3 px-4 w-25 font-weight-bolder"
+                    (click)='watchTrailer()' id="watchTrailer">View Trailer
                     <i class=" fas fa-play ml-2"></i>
                   </button>
-                  <button type="button" class="btn btn-outline-light p-3 w-25 font-weight-bolder">Download
+                  <button type="button" class="btn btn-outline-light px-4 w-25 font-weight-bolder"
+                    (click)='watchNow(tvDetalis?.name)'>Watch movie
                     <i class="fas fa-download w-25"></i>
                   </button>
                 </div>
@@ -33,3 +34,12 @@
     </div>
   </div>
 </section>
+
+<div class="text-center youtubeTrailer">
+  <div class='layer'>
+      <i class="fas fa-times closeClick" (click)='exitIframe()'></i>
+    <iframe width="900" height="500" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </div>
+</div>

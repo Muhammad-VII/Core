@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from './../movies.service';
 import { fade } from './../../animtaions';
 import { Component, OnInit } from '@angular/core';
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   animations: [fade],
 })
 export class TvComponent implements OnInit {
-  constructor(private _MovieService: MoviesService) {
+  constructor(private _MovieService: MoviesService, private _ActivatedRoute:ActivatedRoute) {
     this.changePageTv(1);
   }
   pages: number[] = [1, 2, 3, 4, 5, 6];

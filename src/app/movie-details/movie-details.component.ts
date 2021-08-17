@@ -1,3 +1,4 @@
+import { fade } from './../../animtaions';
 import { MoviesService } from './../movies.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -5,7 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
-  styleUrls: ['./movie-details.component.scss']
+  styleUrls: ['./movie-details.component.scss'],
+  animations: [fade]
 })
 export class MovieDetailsComponent implements OnInit {
 

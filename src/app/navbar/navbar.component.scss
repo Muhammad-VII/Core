@@ -6,3 +6,32 @@
   cursor: pointer;
   color: #09c;
 }
+
+#searchRes {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+#search {
+  border: none;
+  border-left: solid 4px #2196f3 !important;
+  background-color: rgba(0, 43, 56, 0.692);
+  color: #fff;
+  transition: 0.5s background-color;
+  caret-color: #09c;
+}
+
+#search::placeholder {
+  color: rgba(255, 255, 255, 0.767);
+}
+
+#search:focus {
+  outline: none !important;
+  background-color: rgba(0, 4, 5, 0.692);
+}

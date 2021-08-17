@@ -1,3 +1,4 @@
+import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { NetworkComponent } from './network/network.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: `about`, canActivate:[AuthGuard], component: AboutComponent },
   { path: `network`, canActivate:[AuthGuard], component: NetworkComponent },
   { path: `moviedetails/:id`, canActivate:[AuthGuard], component: MovieDetailsComponent },
-  { path:'tvdetalis/:id' ,canActivate:[AuthGuard], component:TvDetailsComponent},
+  { path: `tvdetalis/:id` ,canActivate:[AuthGuard], component:TvDetailsComponent},
+  { path: `artistDetails/:id` ,canActivate:[AuthGuard], component:ArtistDetailsComponent},
   { path: `register`, component: RegisterComponent },
   { path: `login`, component: LoginComponent }
 ];

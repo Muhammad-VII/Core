@@ -9,17 +9,14 @@ import gsap from 'gsap';
   animations: [fade],
 })
 export class MoviesComponent implements OnInit {
-  // moviesList: any[] = [];
   artists: any[] = [];
   pages: number[] = [1, 2, 3, 4, 5, 6];
   pageNumber: number[] = [];
   trendingMovies: any[] = [];
-  // trendingTv: any[] = [];
   imgUrl: string = `http://image.tmdb.org/t/p/w500/`;
 
   constructor(private _MoviesService: MoviesService) {
     this.changePageMovies(1);
-    // this.changePageTv(1);
   }
 
   changePageMovies(pageNumber: number) {
@@ -27,12 +24,6 @@ export class MoviesComponent implements OnInit {
       this.trendingMovies = data.results;
     });
   }
-
-  // changePageTv(pageNumber: number) {
-  //   this._MoviesService.getMoviePigaion(pageNumber).subscribe((data) => {
-  //     this.trendingTv = data.results;
-  //   });
-  // }
 
   ngOnInit(): void {
     let fade = () => {

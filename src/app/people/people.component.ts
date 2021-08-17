@@ -1,3 +1,4 @@
+import { MoviesService } from './../movies.service';
 import { Component, OnInit } from '@angular/core';
 import { fade } from 'src/animtaions';
 
@@ -9,8 +10,14 @@ import { fade } from 'src/animtaions';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor() { }
+  artists:any[] = []
+  imgUrl: string = `http://image.tmdb.org/t/p/w500/`;
 
+  constructor(private _MoviesService:MoviesService) { 
+    _MoviesService.getPerson().subscribe((res) => {
+      this.artists = res.results
+    })
+  }
   ngOnInit(): void {
   }
 

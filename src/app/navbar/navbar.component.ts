@@ -1,3 +1,4 @@
+import { MoviesService } from './../movies.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,7 @@ declare let $: any;
 })
 export class NavbarComponent implements OnInit {
   isLogin: boolean = false;
-  constructor(private _AuthService: AuthService) {
+  constructor(private _AuthService: AuthService, private _MoviesService:MoviesService) {
     _AuthService.currentUser.subscribe(() => {
       if (_AuthService.currentUser.getValue() != null) {
         this.isLogin = true;
@@ -24,10 +25,20 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const searchInput = $('#search')
+    $(searchInput).on('keyup', () => {
+      if($(searchInput).val() != '') {
+        $('#searchRes').fadeIn(400)
+        $('#tv').fadeOut(400)
+      } else {
+        $('#searchRes').fadeOut(400)
+        $('#tv').fadeIn(400)
+      }
+    })
+    
     let tvOffset = 700
     $(window).on('scroll', () => {
       let windowScroll = $(window).scrollTop();
-      console.log(windowScroll);
       if (windowScroll > tvOffset) {
         $('#main-nav').css('backgroundColor','#1317225b').css(`box-shadow`,`none`)
       } else {

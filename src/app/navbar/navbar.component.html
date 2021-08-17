@@ -33,7 +33,7 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+      <input class="mr-sm-2 px-2 py-1" id="search" type="search" placeholder="Search..." aria-label="Search">
 
       <div class="social-media mr-1">
         <i class="fab fa-facebook mx-2"></i>
@@ -53,8 +53,9 @@
         <li class="nav-item">
           <a (click)="isLogOut()" *ngIf="isLogin" class="nav-link">Logout</a>
         </li>
-
       </ul>
     </form>
   </div>
 </nav>
+
+<app-search-results id="searchRes"></app-search-results>

@@ -1,0 +1,16 @@
+<div class="container-fluid m-auto searchRes text-center">
+    <div class="w-75 m-auto">
+        <div class="row">
+            <div *ngFor='let res of results' class="col-md-2">
+                <a [routerLink]='["/tvdetalis", res.id]' class="poster-hover">
+                  <img [src]="imgUrl+res.poster_path" [alt]="res.title" class="w-100 poster position-relative">
+                  <div class="vote">
+                    {{res.vote_average}}
+                  </div>
+                </a>
+                <h3 class="my-2 h6 font-weight-bolder">{{res.title}}</h3>
+                <p class="text-muted">{{res.overview|seemore:15}}</p>
+            </div>
+        </div>
+    </div>
+</div>

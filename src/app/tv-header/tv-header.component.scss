@@ -1,0 +1,15 @@
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+section{
+    background-image: url(../../assets/images/background.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    padding-bottom: 70px;
+}
+
+h1
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
