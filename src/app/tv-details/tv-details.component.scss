@@ -44,6 +44,20 @@
   }
 }
 
+@media only screen and (max-width: 1600px) {
+  iframe {
+    height: 600px;
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  iframe {
+    height: 400px;
+    width: 400px;
+  }
+}
+
 .vote:hover {
   background-color: #09c;
 }
@@ -52,6 +66,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  min-height: 95vh;
 }
 
 .fa-imdb {
