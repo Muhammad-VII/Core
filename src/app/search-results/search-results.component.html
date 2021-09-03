@@ -2,7 +2,7 @@
     <div class="w-75 m-auto">
         <div class="row">
             <div *ngFor='let res of results' class="col-md-2">
-                <a [routerLink]='["/tvdetalis", res.id]' class="poster-hover">
+                <a [routerLink]='["/moviedetails", res.id]' class="poster-hover"> <!--TODO-->
                   <img [src]="imgUrl+res.poster_path" [alt]="res.title" class="w-100 poster position-relative">
                   <div class="vote">
                     {{res.vote_average}}
