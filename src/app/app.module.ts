@@ -22,6 +22,7 @@ import { TvDetailsComponent } from './tv-details/tv-details.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { TvHeaderComponent } from './tv-header/tv-header.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -46,7 +47,7 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
     ArtistDetailsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

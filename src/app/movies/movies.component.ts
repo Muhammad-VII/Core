@@ -1,5 +1,5 @@
 import { fade } from './../../animtaions';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import gsap from 'gsap';
 @Component({
@@ -20,7 +20,7 @@ export class MoviesComponent implements OnInit {
   }
 
   changePageMovies(pageNumber: number) {
-    this._MoviesService.getMoviePigaion(pageNumber).subscribe((data) => {
+    return this._MoviesService.getMoviePigaion(pageNumber).subscribe((data) => {
       this.trendingMovies = data.results;
     });
   }
