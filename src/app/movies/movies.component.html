@@ -1,5 +1,5 @@
 <section id="movies">
-  <app-movies-header [parentData]='trendingMovies'></app-movies-header>
+  <app-movies-header [parentData]='headerData'></app-movies-header>
 
   <section class="w-75 m-auto" @fade>
   
@@ -16,15 +16,20 @@
         </div>
       </div>
   
-      <div *ngFor='let movie of trendingMovies' class="col-md-2">
-        <a [routerLink]='["/moviedetails", movie.id]' class="poster-hover">
-          <img [src]="imgUrl+movie.poster_path" [alt]="movie.title" class="w-100 poster position-relative">
-          <div class="vote">
-            {{movie.vote_average}}
-          </div>
-        </a>
-        <h3 class="my-2 h6 font-weight-bolder">{{movie.title}}</h3>
-        <p class="text-muted">{{movie.overview|seemore:15}}....</p>
+      <div *ngFor='let movie of trendingMovies$| async; trackBy: myTrackByFn' class="col-md-2">
+        <div class="position-relative">
+          <a [routerLink]='["/moviedetails", movie?.id]' class="poster-hover">
+            <img [src]="imgUrl+movie?.poster_path" [alt]="movie?.title" class="w-100 poster position-relative">
+            <div class="vote">
+              {{movie?.vote_average}}
+            </div>
+          </a>
+          <ngx-spinner *ngIf="loading" bdColor = "rgba(0, 0, 0, 0.9)" size = "medium" color = "#131722" type = "ball-atom" [fullScreen] = "false">
+          </ngx-spinner>
+        </div>
+        <h3 class="my-2 h6 font-weight-bolder">{{movie?.title}}</h3>
+        <p class="text-muted">{{movie?.overview|seemore:15}}....</p>
+
       </div>
     </div>
   
@@ -39,3 +44,5 @@
     </div>
   </section>
 </section>
+
+

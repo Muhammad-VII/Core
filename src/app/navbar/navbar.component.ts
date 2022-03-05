@@ -10,7 +10,7 @@ declare let $: any;
 })
 export class NavbarComponent implements OnInit {
   isLogin: boolean = false;
-  constructor(private _AuthService: AuthService) {
+  constructor(private _AuthService: AuthService, private _MoviesService:MoviesService) {
     _AuthService.currentUser.subscribe(() => {
       if (_AuthService.currentUser.getValue() != null) {
         this.isLogin = true;
@@ -23,11 +23,11 @@ export class NavbarComponent implements OnInit {
   isLogOut() {
     this._AuthService.logout();
   }
-
-  ngOnInit(): void {
-    const searchInput = $('#search')
-    $(searchInput).on('keyup', () => {
-      if($(searchInput).val() != '') {
+  searchResutls: any[] = []
+  searchFn(term: string | HTMLElement | any): void {
+    if (term.value != '') {
+      this._MoviesService.search(term.value).subscribe((searchResults: any) => {
+        this.searchResutls = searchResults
         $('#searchRes').fadeIn(400, () => {
           $('#movies').fadeOut(400)
           $('#movie-details').fadeOut(400)
@@ -36,18 +36,19 @@ export class NavbarComponent implements OnInit {
           $('#people').fadeOut(400)
           $('#artist-details').fadeOut(400)
         })
-      } else {
-        $('#searchRes').fadeOut(400, () => {
-          $('#movies').fadeIn(400)
-          $('#movie-details').fadeIn(400)
-          $('#tv-detalis').fadeIn(400)
-          $('#tv').fadeIn(400)
-          $('#people').fadeIn(400)
-          $('#artist-details').fadeIn(400)
-        })
-      }
-    })
-    
+      })
+    } else {
+      $('#searchRes').fadeOut(400, () => {
+        $('#movies').fadeIn(400)
+        $('#movie-details').fadeIn(400)
+        $('#tv-detalis').fadeIn(400)
+        $('#tv').fadeIn(400)
+        $('#people').fadeIn(400)
+        $('#artist-details').fadeIn(400)
+      })
+    }
+  }
+  ngOnInit(): void {
     let tvOffset = 700
     $(window).on('scroll', () => {
       let windowScroll = $(window).scrollTop();

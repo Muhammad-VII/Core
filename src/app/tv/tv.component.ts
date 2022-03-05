@@ -1,12 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from './../movies.service';
 import { fade } from './../../animtaions';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-tv',
   templateUrl: './tv.component.html',
   styleUrls: ['./tv.component.scss'],
   animations: [fade],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TvComponent implements OnInit {
   constructor(private _MovieService: MoviesService, private _ActivatedRoute:ActivatedRoute) {
@@ -20,6 +21,7 @@ export class TvComponent implements OnInit {
   changePageTv(pageNumber: number) {
     this._MovieService.getTvPigaion(pageNumber).subscribe((data) => {
       this.trendingTv = data.results;
+      
     });
   }
 

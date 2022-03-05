@@ -40,7 +40,7 @@ export class TvDetailsComponent implements OnInit {
   }
 
   watchNow(term: String) {
-    const link = `https://movs4u.vip/tvshows/${term.split(' ').join('-')}/`;
+    const link = `https://heel.egybest.life/series/${term.split(' ').join('-')}/`;
     window.open(link, '_blank');
   }
 

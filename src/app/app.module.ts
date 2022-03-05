@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
@@ -22,9 +22,7 @@ import { TvDetailsComponent } from './tv-details/tv-details.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { TvHeaderComponent } from './tv-header/tv-header.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -53,7 +51,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

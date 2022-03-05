@@ -34,7 +34,7 @@
 
     <form class="form-inline my-2 my-lg-0">
       <span *ngIf="isLogin">
-        <input class="mr-sm-2 px-2 py-1" id="search" type="search" placeholder="Search..." aria-label="Search">
+        <input class="mr-sm-2 px-2 py-1" id="search" type="search" placeholder="Search..." aria-label="Search" (keyup)="searchFn(val)" #val>
       </span>
       <div class="social-media mr-1" *ngIf="isLogin">
         <i class="fab fa-facebook mx-2"></i>

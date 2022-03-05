@@ -1,7 +1,7 @@
 <div id="movie-details" class="container py-5 mt-5" @fade>
     <div class="row">
         <div  class="col-md-4">
-            <img class="w-100" [src]='imgUrl+moviesdetails.poster_path' [alt]="moviesdetails.title">
+            <img class="w-100" [src]='imgUrl+moviesdetails?.poster_path' [alt]="moviesdetails?.title">
         </div>
 
         <div class="col-md-8">

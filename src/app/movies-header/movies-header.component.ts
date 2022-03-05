@@ -15,7 +15,7 @@ export class MoviesHeaderComponent implements OnInit {
   imgUrl: string = `http://image.tmdb.org/t/p/w500/`;
 
   ngOnInit(): void {
-
+    
   }
   
   customOptions: OwlOptions = {
