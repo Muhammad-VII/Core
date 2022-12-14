@@ -28,7 +28,7 @@
     "@nguniversal/express-engine": "13.0.2",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "gsap": "^3.6.1",
     "jquery": "^3.6.0",
     "jwt-decode": "^3.1.2",
